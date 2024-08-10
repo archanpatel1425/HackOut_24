@@ -1,72 +1,189 @@
-/* src/Navbar.css */
+/* Reset some basic styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+  background-color: #28a745; /* Green agricultural theme */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+}
+
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  color: #ffc107;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu .nav-item {
+  margin-left: 20px;
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-links:hover {
+  color: #ffc107;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #28a745;
+  top: 100%; /* Positioned directly below the dropdown trigger */
+  left: 0;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #ffc107;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Sign In/Up Button */
+.nav-signin {
+  background-color: #ffc107;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-signin:hover {
+  background-color: #fff;
+  color: #28a745;
+}
+
+/* Responsive styling */
+.nav-icon {
+  display: none;
+}
+
+.nav-toggle-btn {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: none; /* Hide the menu items by default */
+    position: absolute;
+    top: 80px; /* Adjust based on navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #28a745;
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+
+  .nav-menu.active {
+    display: flex; /* Display menu items when toggled */
   }
-  
-  .navbar {
-    background-color: #333;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo a {
+
+  .nav-icon {
+    display: block;
     color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
+    font-size: 1.8rem;
+    cursor: pointer;
   }
-  
-  .navbar-links {
-    list-style: none;
-    display: flex;
+
+  .nav-toggle-btn {
+    display: block; /* Display the toggle button */
   }
-  
-  .navbar-links li {
-    margin-left: 20px;
+
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .nav-item {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 5px;
+    width: 100%;
   }
-  
-  .nav-item:hover {
-    background-color: #fff;
-    color: #333;
+
+  .nav-links {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    display: block; /* Ensure each link occupies full width */
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .navbar-links {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-  
-    .navbar-links li {
-      margin-left: 0;
-      margin-top: 10px;
-    }
-  
-    .nav-item {
-      width: 100%;
-      text-align: center;
-    }
+
+  .dropdown-menu {
+    position: static; /* No absolute positioning needed for dropdown in mobile view */
+    width: 100%;
   }
-  
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    font-size: 1rem;
+  }
+
+  .nav-icon,
+  .nav-toggle-btn {
+    font-size: 1.5rem;
+  }
+}

@@ -43,8 +43,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/signin" className="nav-links nav-signin" onClick={() => setIsOpen(false)}>
-              Sign In/Up
+            <Link to="/login" className="nav-links nav-signin" onClick={() => setIsOpen(false)}>
+              Login
             </Link>
           </li>
         </ul>

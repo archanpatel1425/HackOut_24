@@ -14,7 +14,7 @@ The **AgriProject** is a web-based application designed to manage various aspect
 
 ![image](https://raw.githubusercontent.com/archanpatel1425/photos/main/WhatsApp%20Image%202024-08-10%20at%2017.24.18_4c4f962f.jpg)
 
-![image](https://raw.githubusercontent.com/archanpatel1425/photos/main/WhatsApp%20Image%202024-08-10%20at%2017.26.26_c265fd9b.jpg )
+![image](https://raw.githubusercontent.com/archanpatel1425/photos/main/WhatsApp%20Image%202024-08-10%20at%2017.24.16_d7b453cd.jpg)
 
 ![image](https://raw.githubusercontent.com/archanpatel1425/photos/main/WhatsApp%20Image%202024-08-10%20at%2017.24.22_011b86e4.jpg)
 

@@ -5,10 +5,8 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { AuthContext } from "./helpers/AuthContext";
-import Navbar from "./components/Navbar";
-
+import Userpage from "./pages/Userpage";
 function App() {
-  const [count, setCount] = useState(0)
   const [authState, setAuthState] = useState({
     username: "",
     status: false,
@@ -38,12 +36,12 @@ function App() {
       <AuthContext.Provider value={{ authState, setAuthState }}>
 
         <Router>
-          <Navbar />
           <Routes>
             <Route path="/" exact element={<Home />}></Route>
             <Route path="/about" exact element={<About />}></Route>
             <Route path="/login" exact element={<Login/>} ></Route>
             <Route path="/signup" exact element={<Signup/>} ></Route>
+            <Route path="/userpage" exact element={<Userpage/>} ></Route>
           </Routes>
         </Router>
       </AuthContext.Provider>

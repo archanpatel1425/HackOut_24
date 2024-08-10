@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import Navbar from "../components/Navbar";
+
 
 function SignUp() {
     const [username, setUsername] = useState("");
@@ -28,13 +30,14 @@ function SignUp() {
                     mobileno: response.data.mobileno,
                     status: true,
                 });
-                navigater('/');
+                navigater('/userpage');
             }
         });
     };
 
     return (
         <>
+          <Navbar />
         <div style={styles.bg}>
             <div className="loginContainer border border-3 border-primary" style={styles.loginContainer}>
                 <div className="form-group" style={styles.formGroup}>

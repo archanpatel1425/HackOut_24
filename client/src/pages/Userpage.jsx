@@ -3,6 +3,7 @@ import UserNavbar from "../components/UserNavbar";
 import { useNavigate } from "react-router-dom";
 import { Chart } from 'react-google-charts';
 import '../styles/Userpage.css';
+import { Link } from 'react-router-dom';
 
 const Userpage = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -18,16 +19,16 @@ const Userpage = () => {
       "image": "https://th.bing.com/th/id/OIP.1knaDRc-ynNZdvDbH-8oAAHaEo?rs=1&pid=ImgDetMain"
     },
     {
-      "latitude": 28.6139,
-      "longitude": 77.2090,
+      "latitude": 23.186438,
+      "longitude":72.5713621,
       "soilType": "Clayey",
       "weather": "Rainy",
-      "image": "https://th.bing.com/th/id/OIP.1knaDRc-ynNZdvDbH-8oAAHaEo?rs=1&pid=ImgDetMain"
+      "image": "https://th.bing.com/th/id/OIP.jaKLcaY8M7WquljA4kEzLwHaEo?rs=1&pid=ImgDetMain"
     }
   ];
 
-  const latitude = 12.9716;
-  const longitude = 77.5946;
+  const latitude = 23.186438;
+  const longitude = 72.5713621;
 
   useEffect(() => {
     if (localStorage.getItem('accessToken') === null) {
@@ -95,7 +96,8 @@ const Userpage = () => {
                 />
               </div>
               <button className="browse-seeds-button">
-                Browse best seeds for current conditions
+                <Link to='/seeds'>
+                Browse best seeds for current conditions</Link>
               </button>
             </div>
           </>

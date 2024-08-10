@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import { AuthContext } from "./helpers/AuthContext";
 import Userpage from "./pages/Userpage";
+import Seeds from "./pages/Seeds";
 function App() {
   const [authState, setAuthState] = useState({
     username: "",
@@ -42,6 +43,7 @@ function App() {
             <Route path="/login" exact element={<Login/>} ></Route>
             <Route path="/signup" exact element={<Signup/>} ></Route>
             <Route path="/userpage" exact element={<Userpage/>} ></Route>
+            <Route path="/seeds" exact element={<Seeds/>} ></Route>
           </Routes>
         </Router>
       </AuthContext.Provider>

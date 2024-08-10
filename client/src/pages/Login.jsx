@@ -28,8 +28,7 @@ function Login() {
 
   return (
     <>
-    <div className="bg">
-      <h1 className="text-primary text-center my-4" style={styles.h1}>Login</h1>
+    <div className="bg" style={styles.bg}>
       <div className="loginContainer border border-3 border-primary" style={styles.loginContainer}>
         <label style={styles.label}>Enter Username</label>
         <input
@@ -56,18 +55,19 @@ function Login() {
         </div>
       </div>
       </div>
+      <div className="demo">afsd</div>
     </>
   );
 }
 
 const styles = {
-  body: {
+  root : {
     fontFamily: "'Montserrat', sans-serif",
-    background: "url('https://wallpapercave.com/wp/wp1886334.jpg')", // Background image URL
+    background: "url('bg.jpeg')", // Background image URL
     backgroundColor: "black", // Corrected background color without extra space
     backgroundSize: "cover", // Ensures the image covers the entire background
     backgroundPosition: "center", // Centers the background image
-    height: "100vh",
+   height:"100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -78,10 +78,12 @@ const styles = {
     backgroundSize: "cover", // Ensures the image covers the entire background
     backgroundPosition: "center", // Centers the background image
     height: "100vh",
+    width:"100vw",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
+
   loginContainer: {
     background: "linear-gradient(90deg, rgba(10,36,0,0.35290612827162116) 1%, rgba(33,121,9,0.5349789574032738) 1%, rgba(158,236,127,0.9719537473192402) 100%)", // Updated gradient for the form background
     borderRadius: "20px",
@@ -90,7 +92,8 @@ const styles = {
     maxWidth: "400px",
     width: "100%",
     margin: "auto",
-    marginTop: "20px",
+    marginTop: "8%",
+    justifyContent:"center",
     textAlign: "center",
     position: "relative",
     animation: "fadeInUp 1s ease-in-out", // Powerful animation

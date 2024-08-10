@@ -35,7 +35,7 @@ function SignUp() {
 
     return (
         <>
-            <h1 className="text-primary text-center my-4" style={styles.h1}>Sign Up</h1>
+        <div style={styles.bg}>
             <div className="loginContainer border border-3 border-primary" style={styles.loginContainer}>
                 <div className="form-group" style={styles.formGroup}>
                     <label className="label" style={styles.label}>First name:</label>
@@ -105,6 +105,7 @@ function SignUp() {
                 </div>
                 <button onClick={signUp} className="btn btn-success mt-2 p-2" style={styles.button}>Sign Up</button>
             </div>
+            </div>
         </>
     );
 }
@@ -119,6 +120,21 @@ const styles = {
         letterSpacing: "1.5px",
         animation: "slideDown 0.7s ease-in-out",
     },
+    body:{
+        height:"100%"
+    },
+    bg : {
+        backgroundImage: "url('https://wallpapercave.com/wp/wp1886334.jpg')",
+  backgroundColor: "black",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  height: "90vh",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+      },
+      
     loginContainer: {
         background: "linear-gradient(90deg, rgba(10,36,0,0.35) 1%, rgba(33,121,9,0.53) 1%, rgba(158,236,127,0.97) 100%)",
         borderRadius: "20px",

@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import { AuthContext } from "./helpers/AuthContext";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [count, setCount] = useState(0)
+  const [authState, setAuthState] = useState({
+    username: "",
+    status: false,
+  });
+
+  useEffect(() => {
+    // axios
+    //   .get("http://localhost:3001/auth/auth", {
+    //     headers: {
+    //       accessToken: localStorage.getItem("accessToken"),
+    //     },
+    //   })
+    //   .then((response) => {
+    //     if (response.data.error) {
+    //       setAuthState({ ...authState, status: false });
+    //     } else {
+    //       setAuthState({
+    //         username: response.data.username,
+    //         status: true,
+    //       });
+    //     }
+    //   });
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <AuthContext.Provider value={{ authState, setAuthState }}>
+
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" exact element={<Home />}></Route>
+            <Route path="/about" exact element={<About />}></Route>
+            <Route path="/login" exact element={<Login/>} ></Route>
+            <Route path="/signup" exact element={<Signup/>} ></Route>
+          </Routes>
+        </Router>
+      </AuthContext.Provider>
+    </div>
   )
 }
 

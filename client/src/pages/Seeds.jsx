@@ -8,9 +8,9 @@ import React, { useState } from 'react'
 const Seeds = () => {
   const products = [
     { id: 1, image: 'https://th.bing.com/th/id/OIP.Pa4_fWBPlQfpEHGylO3UmgHaFS?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
-    { id: 2, image: 'https://th.bing.com/th/id/OIP.Pa4_fWBPlQfpEHGylO3UmgHaFS?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
+    { id: 2, image: 'https://th.bing.com/th/id/OIP.W3h2zrtf0PQaEMnRoDVrgQHaEo?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
     { id: 3, image: 'https://th.bing.com/th/id/OIP.Pa4_fWBPlQfpEHGylO3UmgHaFS?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
-    { id: 4, image: 'https://th.bing.com/th/id/OIP.Pa4_fWBPlQfpEHGylO3UmgHaFS?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
+    { id: 4, image: 'https://th.bing.com/th/id/OIP.W3h2zrtf0PQaEMnRoDVrgQHaEo?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
     { id: 5, image: 'https://th.bing.com/th/id/OIP.Pa4_fWBPlQfpEHGylO3UmgHaFS?rs=1&pid=ImgDetMain', name: 'Organic Vegetable', price: '$19.00' },
   ];
   const [amount, setAmount] = useState('19');
@@ -73,7 +73,7 @@ const Seeds = () => {
           slidesPerView={3}
           navigation
           pagination={{ clickable: true }}
-          className="product-carousel px-5"
+          className="product-carousel px-5 "
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>

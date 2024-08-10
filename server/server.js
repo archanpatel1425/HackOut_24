@@ -2,14 +2,17 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const Razorpay = require('razorpay');
-const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(cors());
-
+const dotenv = require('dotenv')
+require('dotenv').config();
 // Routers
 const bookRouter = require("./routes/BookDetail");
 app.use("/bookdata", bookRouter);
-
+const razorpay = new Razorpay({
+  key_id: 'rzp_test_40nHjHFzziBJq8',
+  key_secret: '2n3ta9j8KocFsTCLyRnAjxQe'
+});
 const authRouter = require("./routes/Login");
 app.use("/auth", authRouter);
 app.post('/create-order', async (req, res) => {

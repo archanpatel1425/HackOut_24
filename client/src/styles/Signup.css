@@ -1,0 +1,42 @@
+.loginContainer {
+    padding: 40px;
+    max-width: 400px;
+    margin: auto;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Blue gradient */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.loginContainer label {
+    margin-bottom: 5px;
+    color: #ffffff; /* White text color for labels */
+    font-weight: bold;
+}
+
+.loginContainer input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d1e3ff; /* Light blue border */
+    outline: none;
+    font-size: 16px;
+    background: #ffffff; /* White background for input */
+    color: #1e3c72; /* Blue text color */
+}
+
+.loginContainer button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Same gradient as container */
+    color: #ffffff; /* White text color */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.loginContainer button:hover {
+    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%); /* Reversed gradient on hover */
+}

@@ -9,6 +9,9 @@ app.use(cors());
 const bookRouter = require("./routes/BookDetail");
 app.use("/bookdata", bookRouter);
 
-  app.listen(3001, () => {
-    console.log("Server running on port 3001");
-  });
+const authRouter = require("./routes/Login");
+app.use("/auth", authRouter);
+
+app.listen(3001, () => {
+  console.log("Server running on port 3001");
+});

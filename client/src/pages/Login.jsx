@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
+import Navbar from "../components/Navbar";
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -21,13 +23,14 @@ function Login() {
           username: username,
           status: true,
         });
-        navigater('/');
+        navigater('/userpage');
       }
     });
   };
 
   return (
     <>
+          <Navbar />
     <div className="bg" style={styles.bg}>
       <div className="loginContainer border border-3 border-primary" style={styles.loginContainer}>
         <label style={styles.label}>Enter Username</label>

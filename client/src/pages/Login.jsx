@@ -4,30 +4,24 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { setAuthState } = useContext(AuthContext);
 
   let navigater = useNavigate();
 
   const login = () => {
-    const data = { email: email, password: password };
-    axios.post("http://localhost:3001/bookdata/login", data).then((response) => {
+    const data = { username: username, password: password };
+    axios.post("http://localhost:3001/auth/login", data).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
       } else {
         localStorage.setItem("accessToken", response.data.token);
         setAuthState({
-          email: email,
+          username: username,
           status: true,
         });
-        if (response.data.usertype == 'admin') {
-          navigater('/AdminDashboard')
-        } else if (response.data.usertype == 'librarian') {
-          navigater('/LibrarianDashboard')
-        } else {
-          navigater('/')
-        }
+        navigater('/')
       }
     });
   };
@@ -36,16 +30,16 @@ function Login() {
     <>
       <h1 className="text-primary text-center my-4 ">Login</h1>
       <div className="loginContainer border border-3 border-primary" style={styles.loginContainer}>
-        <label style={styles.label}>Email-id :</label>
+        <label style={styles.label}>User name :</label>
         <input
           type="text"
           onChange={(event) => {
-            setEmail(event.target.value);
+            setUsername(event.target.value);
           }}
           style={styles.input}
           autoFocus
         />
-        <label style={styles.label}>Password</label>
+        <label style={styles.label}>Password : </label>
         <input
           type="password"
           onChange={(event) => {

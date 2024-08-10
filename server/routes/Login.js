@@ -52,7 +52,7 @@ router.post("/signup", async (req, res) => {
         }
 
         bcrypt.hash(password, 10).then((hash) => {
-            const query = `INSERT INTO user_details (username,email, password,first_name,last_name, phone_number,date_of_birth) VALUES (${mysql.escape(username)}, ${mysql.escape(email)}, ${mysql.escape(hash)}, ${mysql.escape(firstname)}, ${mysql.escape(lastname)} ,${mysql.escape(mobileno)},${mysql.escape(date_of_birth)})`;
+            const query =`INSERT INTO user_details (username,email, password,first_name,last_name, phone_number,date_of_birth,user_logo) VALUES (${mysql.escape(username)}, ${mysql.escape(email)}, ${mysql.escape(hash)}, ${mysql.escape(firstname)}, ${mysql.escape(lastname)} ,${mysql.escape(mobileno)},${mysql.escape(date_of_birth)},,${mysql.escape('https://ui-avatars.com/api/?name='+firstname+'+'+lastname+'+&background=0D8ABC&color=fff')})`;
             db.query(query, (err, result) => {
                 if (err) {
                     console.error('Database insertion error:', err);

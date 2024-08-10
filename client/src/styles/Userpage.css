@@ -1,0 +1,99 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Space between the cards */
+    padding: 20px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  }
+  
+  .weather-card,
+  .charts-card {
+    background: linear-gradient(135deg, #dfe6de 0%, #28df28 100%);
+    border-radius: 35px;
+    height: 450px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 45%; /* Width for large screens */
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 10px 0; /* Margin for better spacing */
+    padding: 20px;
+  }
+  
+  .weather-card:hover,
+  .charts-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .weather-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 25px;
+    object-fit: cover;
+    border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .weather-info {
+    padding: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .weather-info h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .weather-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+  }
+  
+  .chart-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .browse-seeds-button {
+    background: #ff7e5f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .browse-seeds-button:hover {
+    background: #feb47b;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack the cards vertically */
+      align-items: center; /* Center-align the cards */
+    }
+  
+    .weather-card,
+    .charts-card {
+      width: 100%; /* Full width on small screens */
+    }
+  
+    .weather-image {
+      height: 180px; /* Adjusted height for smaller screens */
+    }
+  
+    .weather-info h2 {
+      font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+  
+    .weather-info p {
+      font-size: 1rem; /* Adjusted font size for smaller screens */
+    }
+  }
+  

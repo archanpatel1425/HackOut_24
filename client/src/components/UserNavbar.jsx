@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import axios from 'axios'
+import '../styles/Navbar.css';
+import { MdLocationOn, MdLogout, MdMap } from 'react-icons/md';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,14 +72,24 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo">
           AgriProject
         </Link>
-        <div className="nav-icon" onClick={toggleMenu}>
-          <i className="bx bx-menu"></i>
-        </div>
-        <div>langitude : {location.latitude}</div>
-        <div>Longitude : {location.longitude}</div>
-        <button className="nav-toggle-btn" onClick={toggleMenu}>
-          <i className="bx bx-menu"></i>
-        </button>
+        <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
+        <li className="nav-item">
+            <Link to="/userpage" className="nav-links nav-signin" onClick={() => setIsOpen(false)}>
+            <MdLocationOn  style={{ color: 'red' }}/> langitude : {location.latitude}
+            </Link>
+          </li>
+        <li className="nav-item">
+            <Link to="/userpage" className="nav-links nav-signin" onClick={() => setIsOpen(false)}>
+            <MdMap  style={{ color: 'red' }}/> Longitude : {location.longitude}
+            </Link>
+          </li>
+        <li className="nav-item">
+            <Link to="/" className="nav-links nav-signin" onClick={() => setIsOpen(false)}>
+            <MdLogout  style={{ color: 'red' }}/> Logout
+            </Link>
+          </li>
+        </ul>
+        
       </div>
     </nav>
   );

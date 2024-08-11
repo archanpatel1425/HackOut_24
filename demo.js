@@ -28,7 +28,7 @@ async function getWeather(apiKey, city) {
 
 
 
-const API_KEY = '1db303973c85f3430b900609533353d0';
+const API_KEY = 'abcd';
 const city = 'Ahmedabad';
 getWeather(API_KEY, city);
 

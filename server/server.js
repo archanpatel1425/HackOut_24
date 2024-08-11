@@ -10,8 +10,8 @@ require('dotenv').config();
 const bookRouter = require("./routes/BookDetail");
 app.use("/bookdata", bookRouter);
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_40nHjHFzziBJq8',
-  key_secret: '2n3ta9j8KocFsTCLyRnAjxQe'
+  key_id: 'abc',
+  key_secret: 'abc'
 });
 const authRouter = require("./routes/Login");
 app.use("/auth", authRouter);
